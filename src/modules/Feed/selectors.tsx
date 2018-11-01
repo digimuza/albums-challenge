@@ -9,10 +9,10 @@ export const getFilteredFeedList = (state: IAppState): IFeed[] => {
     .slice(feedsState.offset, feedsState.offset + feedsState.show - 1);
 };
 
-const feedFiltersListToArray = (
-  feedFilterList: IFeedFilterList
-): FeedFilter[] => {
-  return Object.keys(feedFilterList).map(k => feedFilterList[k]);
+const feedFiltersListToArray = (feedFilterList: IFeedFilterList) => {
+  return Object.keys(feedFilterList)
+    .map(k => feedFilterList[k])
+    .filter(f => !!f) as FeedFilter[];
 };
 
 const bigFilter = (filtersGroup: IFeedFilterGroup): FeedFilter => {

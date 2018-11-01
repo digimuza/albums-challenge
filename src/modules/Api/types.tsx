@@ -1,5 +1,10 @@
 export interface IFeed {
+  image: string;
   name: string;
-  price: number;
+  price: {
+    label: string;
+    amount: number;
+    currency: string;
+  };
   releaseDate: Date;
 }

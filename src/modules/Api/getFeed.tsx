@@ -25,9 +25,18 @@ const extractFeedsFromBody = (rawBody: any) => {
 
 const feedTransform = (feed: any): IFeed | undefined => {
   try {
+    const pri = {
+      label: feed["im:price"].label,
+      amount: parseFloat(feed["im:price"].attributes.amount),
+      currency: feed["im:price"].attributes.currency
+    };
+
+    const image = feed["im:image"][2].label;
+
     const data = {
+      image,
       name: feed["im:name"].label as string,
-      price: parseFloat(feed["im:price"].attributes.amount),
+      price: pri,
       releaseDate: new Date(feed["im:releaseDate"].label)
     };
 

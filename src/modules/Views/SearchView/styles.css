@@ -23,9 +23,18 @@
     background: green;
 
     grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid .footer {
     background: orange;
     grid-area: foot;
+}
+
+.feed-list {
+    padding: 35px;
+    background: #fff;
+    width: 66%;
 }
