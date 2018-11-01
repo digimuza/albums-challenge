@@ -6,7 +6,7 @@ interface IProps {
 
 class View extends React.Component<IProps> {
   public render() {
-    return <div>asdasdasd</div>;
+    return <div>{this.props.children}</div>;
   }
 }
 

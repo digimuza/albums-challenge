@@ -1,0 +1,31 @@
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 300px auto;
+    grid-template-areas: "head head"
+        "side-nav  main"
+        "side-nav  foot"
+}
+
+.grid .header {
+    background: red;
+    grid-area: head;
+}
+
+.grid .side-navigation {
+    background: blue;
+
+    grid-area: side-nav;
+}
+
+.grid .main-content {
+    background: green;
+
+    grid-area: main;
+}
+
+.grid .footer {
+    background: orange;
+    grid-area: foot;
+}
