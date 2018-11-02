@@ -1,40 +1,19 @@
-.grid {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 100px auto 100px;
-    grid-template-columns: 300px auto;
-    grid-template-areas: "head head"
-        "side-nav  main"
-        "side-nav  foot"
-}
-
-.grid .header {
-    background: red;
-    grid-area: head;
-}
-
-.grid .side-navigation {
-    background: blue;
-
-    grid-area: side-nav;
-}
-
-.grid .main-content {
-    background: green;
-
-    grid-area: main;
+.content-container {
     display: flex;
+    width: 1140px;
     justify-content: center;
     align-items: center;
 }
 
-.grid .footer {
-    background: orange;
-    grid-area: foot;
+.col {
+    padding: 20px;
+}
+
+.space-bottom {
+    padding-bottom: 40px;
 }
 
 .feed-list {
-    padding: 35px;
-    background: #fff;
-    width: 66%;
+    height: 800px;
+    overflow-y: scroll;
 }

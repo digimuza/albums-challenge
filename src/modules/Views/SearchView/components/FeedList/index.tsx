@@ -6,7 +6,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import * as React from "react";
 import { IFeed } from "src/modules/Api";
 import { Divider, Avatar } from "@material-ui/core";
-
+import "./styles.css";
 interface IProps {
   feeds: IFeed[];
 }
@@ -17,16 +17,24 @@ export const FeedList = ({ feeds }: IProps) => {
 
 const renderList = (feeds: IFeed[]) => {
   return feeds.map((f, index) => {
+    const showDivider = () => {
+      if (index === feeds.length - 1) {
+        return null;
+      }
+      return <Divider />;
+    };
     return (
-      <div key={index}>
+      <div key={index} className="list-item">
         <ListItem>
           <ListItemAvatar>
             <Avatar src={f.image} />
           </ListItemAvatar>
           <ListItemText primary={f.name} />
-          <ListItemSecondaryAction>{f.price.label}</ListItemSecondaryAction>
+          <ListItemSecondaryAction>
+            <div style={{ padding: 20 }}>{f.price.label}</div>
+          </ListItemSecondaryAction>
         </ListItem>
-        <Divider />
+        {showDivider()}
       </div>
     );
   });

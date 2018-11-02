@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./styles.css";
 
 interface IProps {
   children?: any;
@@ -6,7 +7,11 @@ interface IProps {
 
 class View extends React.Component<IProps> {
   public render() {
-    return <div>{this.props.children}</div>;
+    return (
+      <div className="main-container">
+        <div className="layout">{this.props.children}</div>
+      </div>
+    );
   }
 }
 
