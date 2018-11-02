@@ -1,0 +1,19 @@
+.content-container {
+    display: flex;
+    width: 1140px;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    padding: 20px;
+}
+
+.space-bottom {
+    padding-bottom: 40px;
+}
+
+.feed-list {
+    height: 800px;
+    overflow-y: scroll;
+}

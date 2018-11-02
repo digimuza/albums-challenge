@@ -1,0 +1,14 @@
+.layout {
+    width: 1140px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    background: #eeeeee;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
