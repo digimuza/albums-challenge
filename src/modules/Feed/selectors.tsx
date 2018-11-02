@@ -4,7 +4,9 @@ import { IAppState } from "src/store";
 import * as _ from "lodash";
 export const getFilteredFeedList = (state: IAppState): IFeed[] => {
   const feedsState = state.feeds;
-  return feedsState.feeds.filter(bigFilter(feedsState.filtersGroup));
+  return feedsState.feeds
+    .filter(bigFilter(feedsState.filtersGroup))
+    .sort(alphabeticalSort());
 };
 
 export const testFilter = (state: IAppState) => {
@@ -62,5 +64,19 @@ const andFilterMerge = (filerList: FeedFilter[]): FeedFilter => {
 const trueFilter = (): FeedFilter => {
   return (feed: IFeed, index: number, list: IFeed[]) => {
     return true;
+  };
+};
+
+const alphabeticalSort = () => {
+  return (a: IFeed, b: IFeed) => {
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      return 1;
+    }
+
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      return -1;
+    }
+
+    return 0;
   };
 };

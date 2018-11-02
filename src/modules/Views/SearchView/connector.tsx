@@ -12,7 +12,11 @@ import {
 } from "src/modules/Feed/actions/feedFiltering";
 
 const mapStateToProps = (state: IAppState) => {
-  return { feeds: getFilteredFeedList(state), testFilter: testFilter(state) };
+  return {
+    feeds: getFilteredFeedList(state),
+    testFilter: testFilter(state),
+    isLoading: state.feeds.isFetching
+  };
 };
 
 const mapDispatchToProps = (dispatch: any) => {

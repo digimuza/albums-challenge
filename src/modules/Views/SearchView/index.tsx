@@ -12,6 +12,7 @@ import { FeedFilter } from "src/modules/Feed";
 interface IProps {
   children?: any;
   feeds: IFeed[];
+  isLoading: boolean;
   testFilter: (
     groupId: string,
     filterId: string,
@@ -28,7 +29,7 @@ class SearchView extends React.Component<IProps> {
   }
   public render() {
     return (
-      <View>
+      <View isLoading={this.props.isLoading}>
         <div className="content-container">
           <div className="col column1">
             <div className="space-bottom">

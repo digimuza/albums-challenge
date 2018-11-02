@@ -43,7 +43,7 @@ export const feedsReducer = (
       console.error(action.payload);
       return { ...state, isFetching: false };
     case "fetch_feeds_success":
-      return { ...state, feeds: action.payload };
+      return { ...state, feeds: action.payload, isFetching: false };
   }
   return state;
 };

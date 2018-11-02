@@ -5,6 +5,7 @@
 }
 
 .main-container {
+    background: #eeeeee;
     display: flex;
     width: 100vw;
     height: 100vh;
